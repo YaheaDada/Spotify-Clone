@@ -1,29 +1,15 @@
-import { useState } from "react";
-
-import "./App.css";
-import { BarChart } from "@mui/x-charts/BarChart";
+import React from "react";
+import Sidebar from "./components/Sidebar"; // make sure this path is correct
+import { BarChart } from "@mui/x-charts";
+import "./index.css";
+import HomePage from "./pages/HomePage/HomePage";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <h1> Yahiea </h1>
-      <BarChart
-        xAxis={[
-          {
-            id: "barCategories",
-            data: ["bar A", "bar B", "bar C"],
-          },
-        ]}
-        series={[
-          {
-            data: [9, 7, 8],
-          },
-        ]}
-        height={300}
-      />
-    </>
+    <div className="flex min-h-screen">
+      <Sidebar />
+      <HomePage />
+    </div>
   );
 }
 
