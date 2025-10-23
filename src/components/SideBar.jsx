@@ -67,3 +67,5 @@ export default function Sidebar() {
     </div>
   );
 }
+
+// https://github.com/public-apis/public-apis
