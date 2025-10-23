@@ -15,13 +15,13 @@ import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import { useNavigate } from "react-router-dom";
 
 export default function Sidebar() {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const sidebarWidth = open ? 240 : 60;
   const navigate = useNavigate();
 
   return (
     <div
-      className="bg-gray-800 text-white flex flex-col justify-between transition-width duration-300"
+      className="bg-gray-800 text-white flex flex-col justify-between transition-width duration-300 "
       style={{ width: sidebarWidth }}
     >
       <div>
@@ -34,21 +34,21 @@ export default function Sidebar() {
 
         <List>
           <ListItemButton onClick={() => navigate("/")}>
-            <ListItemIcon className="text-white">
+            <ListItemIcon className="text-white" style={{ color: "white" }}>
               <HomeIcon />
             </ListItemIcon>
             {open && <ListItemText primary="Home" />}
           </ListItemButton>
 
           <ListItemButton onClick={() => navigate("/Profile")}>
-            <ListItemIcon className="text-white">
+            <ListItemIcon className="text-white" style={{ color: "white" }}>
               <SettingsIcon />
             </ListItemIcon>
             {open && <ListItemText primary="Profile" />}
           </ListItemButton>
 
           <ListItemButton onClick={() => navigate("/AboutUs")}>
-            <ListItemIcon className="text-white">
+            <ListItemIcon className="text-white" style={{ color: "white" }}>
               <InfoIcon />
             </ListItemIcon>
             {open && <ListItemText primary="About Us" />}
@@ -56,10 +56,9 @@ export default function Sidebar() {
         </List>
       </div>
 
-      {/* Register button at the bottom */}
       <List>
         <ListItemButton onClick={() => navigate("/Register")}>
-          <ListItemIcon className="text-white">
+          <ListItemIcon className="text-white" style={{ color: "white" }}>
             <PersonAddIcon />
           </ListItemIcon>
           {open && <ListItemText primary="Register" />}
