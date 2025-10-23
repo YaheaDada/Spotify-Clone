@@ -46,12 +46,33 @@ const navItemsDualTier = [
     icon: BarChartSquare02,
     items: [
       { label: "Overview", href: "/dashboard/overview", icon: Grid03 },
-      { label: "Notifications", href: "/dashboard/notifications", icon: NotificationBox, badge: 10 },
+      {
+        label: "Notifications",
+        href: "/dashboard/notifications",
+        icon: NotificationBox,
+        badge: 10,
+      },
       { label: "Analytics", href: "/dashboard/analytics", icon: LineChartUp03 },
-      { label: "Saved reports", href: "/dashboard/saved-reports", icon: Star01 },
-      { label: "Scheduled reports", href: "/dashboard/scheduled-reports", icon: ClockFastForward },
-      { label: "User reports", href: "/dashboard/user-reports", icon: UserSquare },
-      { label: "Manage notifications", href: "/dashboard/manage-notifications", icon: Settings03 },
+      {
+        label: "Saved reports",
+        href: "/dashboard/saved-reports",
+        icon: Star01,
+      },
+      {
+        label: "Scheduled reports",
+        href: "/dashboard/scheduled-reports",
+        icon: ClockFastForward,
+      },
+      {
+        label: "User reports",
+        href: "/dashboard/user-reports",
+        icon: UserSquare,
+      },
+      {
+        label: "Manage notifications",
+        href: "/dashboard/manage-notifications",
+        icon: Settings03,
+      },
     ],
   },
   {
@@ -62,7 +83,11 @@ const navItemsDualTier = [
       { label: "View all", href: "/projects/all", icon: Rows01 },
       { label: "Personal", href: "/projects/personal", icon: User01 },
       { label: "Team", href: "/projects/team", icon: Users01 },
-      { label: "Shared with me", href: "/projects/shared-with-me", icon: UsersPlus },
+      {
+        label: "Shared with me",
+        href: "/projects/shared-with-me",
+        icon: UsersPlus,
+      },
       { label: "Archive", href: "/projects/archive", icon: Archive },
     ],
   },
