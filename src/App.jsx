@@ -1,6 +1,5 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+
 import "./App.css";
 import { BarChart } from "@mui/x-charts/BarChart";
 
@@ -19,7 +18,7 @@ function App() {
         ]}
         series={[
           {
-            data: [9, 7, 8 ],
+            data: [9, 7, 8],
           },
         ]}
         height={300}
