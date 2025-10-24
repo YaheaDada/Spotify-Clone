@@ -9,8 +9,10 @@ const TopArtistsByPeriod = () => {
     fetch("/spotify_data_history.json")
       .then((res) => res.json())
       .then((json) => {
-        console.log("Loaded JSON:", json); 
-        setData(json);
+       
+        const arr = Array.isArray(json) ? json : [json];
+        console.log("Loaded JSON:", arr); 
+        setData(arr);
       })
       .catch((err) => console.error("Error loading data:", err));
   }, []);
@@ -18,13 +20,19 @@ const TopArtistsByPeriod = () => {
   useEffect(() => {
     if (data.length === 0) return;
 
-    const now = new Date();
-    const cutoff = new Date();
+    
+    const allDates = data.map((item) => new Date(item.ts));
+    const earliestDate = new Date(Math.min(...allDates));
+    const now = new Date(); 
+    let cutoff = new Date(now);
+
     if (period === "year") cutoff.setFullYear(now.getFullYear() - 1);
     else if (period === "sixMonths") cutoff.setMonth(now.getMonth() - 6);
     else if (period === "fourWeeks") cutoff.setDate(now.getDate() - 28);
 
-    const filtered = data.filter((item) => new Date(item.ts) >= cutoff);
+  
+    let filtered = data.filter((item) => new Date(item.ts) >= cutoff);
+    if (filtered.length === 0) filtered = data; 
 
     const artistMap = {};
     filtered.forEach((item) => {
@@ -43,8 +51,11 @@ const TopArtistsByPeriod = () => {
       .sort((a, b) => b.hours - a.hours)
       .slice(0, 100);
 
+    console.log("Final artists array:", sorted); 
     setArtists(sorted);
   }, [data, period]);
+
+  console.log("Artists to render:", artists); 
 
   return (
     <div style={{ padding: "20px", fontFamily: "sans-serif" }}>
