@@ -1,8 +1,4 @@
-DashBoard must Have
-top songs 
+background   bg-[#6A00FF]
+gradient  bg-gradient-to-r from-[#6A00FF] via-[#C400FF] to-[#FF007F]
 
-
-Profile Must Have the Charts 
-seasons and other things 
-
-tday
+8b00ff

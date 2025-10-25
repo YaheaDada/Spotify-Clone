@@ -4,3 +4,17 @@
   color: white;
   font-size: 15px;
 }
+
+.MuiChartsAxis-tickLabel {
+  color: white;
+}
+.MuiChartsAxis-line {
+  color: white;
+  background-color: white;
+}
+
+
+.MuiGauge-valueText{
+  color: white;
+  background-color: white;
+}

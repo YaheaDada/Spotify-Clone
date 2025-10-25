@@ -34,7 +34,6 @@ const MostActiveSeason = () => {
           seasonTotals[season] += item.ms_played;
         });
 
-        // Convert totals to hours
         const chartData = Object.entries(seasonTotals).map(
           ([season, total]) => ({
             season,
@@ -42,7 +41,6 @@ const MostActiveSeason = () => {
           })
         );
 
-        // Find the most active season
         const topSeason = chartData.reduce((max, cur) =>
           cur.hours > max.hours ? cur : max
         );
@@ -59,19 +57,19 @@ const MostActiveSeason = () => {
   if (error) return <p className="text-red-500 p-4">{error}</p>;
 
   return (
-    <div className="  bg-gradient-to-b  text-white p-6 flex flex-col items-center w-full">
-      <h1 className="text-3xl font-bold mb-6 text-green-400">
-         Most Active Listening Season
+    <div className="  bg-linear-to-b  text-white p-6 flex flex-col items-center w-full">
+      <h1 className="text-3xl font-bold mb-6 text-[#8b00ff]">
+        Most Active Listening Season
       </h1>
 
       {mostActiveSeason ? (
         <p className="text-lg mb-8 text-gray-200">
           You listened the most during{" "}
-          <span className="font-semibold text-green-400">
+          <span className="font-semibold text-[#FF007F]">
             {mostActiveSeason.season}
           </span>{" "}
           — about{" "}
-          <span className="font-semibold text-green-400">
+          <span className="font-semibold text-[#FF007F]">
             {mostActiveSeason.hours.toFixed(1)} hours
           </span>{" "}
           of music.
@@ -95,7 +93,7 @@ const MostActiveSeason = () => {
               {
                 data: seasonData.map((d) => d.hours),
                 label: "Listening Hours",
-                color: "#1DB954",
+                color: "#8b00ff",
               },
             ]}
             height={400}

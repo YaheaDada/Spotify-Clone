@@ -2,11 +2,15 @@ import TopArtistsByPeriod from "../../Questions/masa/TopArtistsByPeriod";
 import AverageListeningTime from "../../Questions/masa/AverageListeningTime";
 import UniqueSongsCount from "../../Questions/masa/UniqueSongsCount";
 import MostActiveSeason from "../../Questions/masa/MostActiveHour";
+import VibrantGradientCards from "../../components/Cards";
 
 import React from "react";
 import { BarChart, PieChart, Gauge } from "@mui/x-charts";
 import Hero from "../../components/Hero";
 import HeroSection from "../../components/Hero";
+import PodcastsSection from "../../components/PodCasts";
+import Footer from "./../../components/Footer";
+import MusicPlayer from "../../components/MusicPlayer";
 
 const HomePage = () => {
   const featuredPlaylists = [
@@ -14,22 +18,25 @@ const HomePage = () => {
       id: 1,
       name: "Top Hits 2025",
       cover:
-        "https://images.unsplash.com/photo-1761216466205-940be541402b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=774",
+        "https://plus.unsplash.com/premium_photo-1673306773569-4d864b99c96c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1740",
     },
     {
       id: 2,
       name: "Chill Vibes",
-      cover: "https://i.scdn.co/image/ab67706f0000000347f9a6ecfd4c2dc83f76f84a",
+      cover:
+        "https://images.unsplash.com/photo-1619983081563-430f63602796?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=774",
     },
     {
       id: 3,
       name: "Hip-Hop Heat",
-      cover: "https://i.scdn.co/image/ab67706f00000003dc91d6c4df42c4b1f17658cf",
+      cover:
+        "https://images.unsplash.com/photo-1601643157091-ce5c665179ab?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1744",
     },
     {
       id: 4,
       name: "Focus Beats",
-      cover: "https://i.scdn.co/image/ab67706f0000000338b2dfad83097e4e8adf0d65",
+      cover:
+        "https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1740",
     },
   ];
 
@@ -74,7 +81,7 @@ const HomePage = () => {
   ];
 
   return (
-    <div className="min-h-screen w-screen bg-gradient-to-b from-[#121212] to-[#181818] text-gray-100 p-9">
+    <div className="min-h-screen w-screen bg-gradient-to-b from-[#121212] to-[#181818] text-gray-100 ">
       <HeroSection />
       <div className="max-w-[1800px] mx-auto mb-12 flex flex-col md:flex-row justify-between items-center bg-[#1e1e1e] p-9 rounded-3xl shadow-lg border border-[#333]">
         <div>
@@ -82,14 +89,14 @@ const HomePage = () => {
           <p className="text-xl text-gray-400">Your daily music dashboard</p>
         </div>
         <div className="mt-6 md:mt-0">
-          <button className="px-6 py-3 bg-[#1DB954] hover:bg-[#17a44c] text-black font-semibold rounded-full shadow">
+          <button className="px-6 py-3  bg-[#8b00ff]  text-white font-semibold rounded-full shadow">
             Explore Music
           </button>
         </div>
       </div>
       {/* Featured Playlists */}
       <div className="max-w-[1800px] mx-auto mb-12">
-        <h2 className="text-3xl font-semibold mb-6 text-amber-400">
+        <h2 className="text-3xl font-semibold mb-6 text-[#8b00ff]">
           Featured Playlists
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -109,8 +116,8 @@ const HomePage = () => {
         </div>
       </div>
       {/* Top Artists */}
-      <div className="max-w-[1800px] mx-auto mb-12">
-        <h2 className="text-3xl font-semibold mb-6 text-amber-400">
+      <div className="max-w-[1800px] mx-auto mb-4">
+        <h2 className="text-3xl font-semibold mb-6 text-[#8b00ff]">
           Top Artists
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -122,13 +129,14 @@ const HomePage = () => {
               <img
                 src={artist.img}
                 alt={artist.name}
-                className="w-32 h-32 rounded-full border-4 border-[#1DB954] mb-4 object-cover"
+                className="w-32 h-32 rounded-full border-4 border-[#8b00ff] mb-4 object-cover"
               />
               <p className="text-lg text-gray-200 font-medium">{artist.name}</p>
             </div>
           ))}
         </div>
       </div>
+      <PodcastsSection />
       {/* Analytics Section */}
       <div className="max-w-[1800px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-9">
         {/* Daily Streams */}
@@ -191,6 +199,14 @@ const HomePage = () => {
           <UniqueSongsCount />
         </div>
       </div>
+      <VibrantGradientCards />
+      
+      <div className="w-full">
+        <Footer />
+      </div>
+
+      <MusicPlayer />
+      <div className="h-[80px]" />
     </div>
   );
 };

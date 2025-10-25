@@ -55,7 +55,7 @@ const TopArtistsByPeriod = () => {
   return (
     <div className="text-white p-6 w-full">
       <div className="max-w-3xl mx-auto">
-        <h1 className="text-3xl font-bold mb-6 text-green-400 flex items-center gap-2">
+        <h1 className="text-3xl font-bold mb-6 text-[#8b00ff] flex items-center gap-2">
            Top Artists by Listening Time
         </h1>
 
@@ -89,7 +89,7 @@ const TopArtistsByPeriod = () => {
                   </span>
                   <span className="font-medium text-lg">{artist.name}</span>
                 </div>
-                <span className="text-green-400 font-semibold">
+                <span className="text-[#8b00ff] font-semibold">
                   {artist.hours.toFixed(2)}h
                 </span>
               </motion.li>
@@ -101,7 +101,7 @@ const TopArtistsByPeriod = () => {
           <div className="flex justify-center mt-6">
             <button
               onClick={() => setShowAll((prev) => !prev)}
-              className="px-5 py-2 bg-green-500 hover:bg-green-400 text-black font-bold rounded-full transition-all duration-200 shadow-md"
+              className="px-5 py-2 bg-[#8b00ff] hover:bg-[#6A00FF] text-black font-bold rounded-full transition-all duration-200 shadow-md"
             >
               {showAll ? "View Less" : "View More"}
             </button>

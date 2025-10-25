@@ -15,12 +15,12 @@ const celebrities = [
   {
     name: "Beyoncé",
     image:
-      "https://m.media-amazon.com/images/M/MV5BYWYwYzYzMjUtNWE0MS00NmJlLTljNGMtNzliYjg5NzQ1OWY5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      "https://www.shutterstock.com/editorial/image-editorial/M6T5A304Nfz1Ie5eNTMwMjg=/drake-440nw-10389989k.jpg",
   },
   {
     name: "The Weeknd",
     image:
-      "https://m.media-amazon.com/images/M/MV5BYWYwYzYzMjUtNWE0MS00NmJlLTljNGMtNzliYjg5NzQ1OWY5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVATvs4V3nTPbcCep-ECSSrzkJgQTvE1H4ew&s",
   },
 ];
 
@@ -36,7 +36,7 @@ const Hero = () => {
 
   return (
     <div className="flex justify-center w-full p-4">
-      <section className="relative bg-gradient-to-r from-green-500 to-teal-500 text-white py-20 px-6 md:px-20 rounded-2xl mb-[35px] w-[1800px] overflow-hidden">
+      <section className="relative bg-gradient-to-r from-[#6A00FF] via-[#C400FF] to-[#FF007F] text-white py-20 px-6 md:px-20 rounded-2xl mb-[35px] w-[1800px] overflow-hidden">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between">
           {/* Left Text */}
           <div className="md:w-1/2 mb-10 md:mb-0 z-10">
@@ -47,7 +47,7 @@ const Hero = () => {
               Stream, explore, and get closer to the stars you love. Your
               ultimate music experience starts here.
             </p>
-            <button className="bg-white text-green-600 font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-gray-100 transition">
+            <button className="bg-white text-[#6A00FF] font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-gray-100 transition">
               Start Listening
             </button>
           </div>

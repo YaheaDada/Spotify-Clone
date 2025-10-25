@@ -37,7 +37,7 @@ const UniqueSongsCount = () => {
 
   return (
     <div className=" bg-gradient-to-b from-[#121212] to-[#181818] text-white flex flex-col items-center justify-center p-6 w-full">
-      <h1 className="text-3xl font-bold mb-6 text-green-400">
+      <h1 className="text-3xl font-bold mb-6 text-[#8b00ff]">
         Unique Songs Played
       </h1>
 
@@ -50,19 +50,19 @@ const UniqueSongsCount = () => {
               valueMax={maxSongs}
               startAngle={-110}
               endAngle={110}
-              innerRadius="80%"
+              innerRadius="81%"
               outerRadius="100%"
               sx={{
                 width: 250,
                 height: 250,
                 [`& .MuiGauge-valueArc`]: {
-                  fill: "#1DB954",
+                  fill: "#8b00ff",
                 },
                 [`& .MuiGauge-referenceArc`]: {
                   fill: "#2a2a2a",
                 },
                 [`& .MuiGauge-valueText`]: {
-                  fill: "#1DB954",
+                  fill: "#FF007F",
                   fontSize: 28,
                   fontWeight: "bold",
                 },
@@ -73,7 +73,7 @@ const UniqueSongsCount = () => {
 
           <p className="text-lg mt-6 text-gray-300">
             You’ve listened to{" "}
-            <span className="text-green-400 font-semibold">
+            <span className="text-[#FF007F] font-semibold">
               {uniqueCount.toLocaleString()}
             </span>{" "}
             unique songs 🎶

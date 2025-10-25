@@ -50,14 +50,14 @@ const AverageListeningTime = () => {
 
   return (
     <div className="p-6 text-center text-white w-full justify-center flex-col flex items-center w-full h-full">
-      <h1 className="text-3xl font-bold mb-4 text-green-400">
+      <h1 className="text-3xl font-bold mb-4 text-[#8b00ff]">
         Average Daily Listening Time
       </h1>
 
       {avgTime ? (
         <p className="text-lg mb-8">
           You listen on average{" "}
-          <span className="text-green-400 font-semibold">
+          <span className="text-[#FF007F] font-semibold">
             {avgTime.hours}h {avgTime.minutes}m
           </span>{" "}
           per day
@@ -88,7 +88,7 @@ const AverageListeningTime = () => {
               {
                 data: dailyData.map((d) => d.hours),
                 label: "Hours Listened",
-                color: "#1DB954",
+                color: "#8b00ff",
                 area: true,
                 showMark: false,
               },

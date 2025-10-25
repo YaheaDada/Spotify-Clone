@@ -4,10 +4,10 @@ const Login = () => {
   const [isSignIn, setIsSignIn] = useState(true);
 
   return (
-    <div className="min-h-screen w-screen flex items-center justify-center bg-gradient-to-b from-[#121212] to-[#181818] text-white p-6">
+    <div className="min-h-screen w-screen flex items-center justify-center bg-linear-to-b from-[#121212] to-[#181818] text-white p-6">
       <div className="relative w-full max-w-md">
         {/* Soft animated gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1DB954] to-[#1E90FF] opacity-20 animate-pulse rounded-xl"></div>
+        <div className="absolute inset-0 bg-linear-to-r from-[#1DB954] to-[#1E90FF] opacity-20 animate-pulse rounded-xl"></div>
 
         {/* Login card */}
         <div className="relative bg-[#1e1e1e]/90 backdrop-blur-sm p-12 rounded-3xl shadow-lg border border-[#333]">
