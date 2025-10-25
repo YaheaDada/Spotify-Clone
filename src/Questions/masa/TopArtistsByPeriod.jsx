@@ -53,10 +53,10 @@ const TopArtistsByPeriod = () => {
   const visibleArtists = showAll ? artists : artists.slice(0, 10);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#121212] to-[#181818] text-white p-6 w-full">
+    <div className="text-white p-6 w-full">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-3xl font-bold mb-6 text-green-400 flex items-center gap-2">
-          🎧 Top Artists by Listening Time
+           Top Artists by Listening Time
         </h1>
 
         <div className="mb-6 flex items-center gap-3">
@@ -81,7 +81,7 @@ const TopArtistsByPeriod = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.2 }}
-                className="bg-[#1e1e1e] hover:bg-[#282828] p-4 rounded-xl flex justify-between items-center shadow-sm border border-transparent hover:border-green-400/30"
+                className=" bg-[#131313] p-4 rounded-xl flex justify-between items-center shadow-sm border border-transparent hover:border-green-400/30"
               >
                 <div className="flex items-center gap-3">
                   <span className="text-gray-400 font-bold w-6 text-right">

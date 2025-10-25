@@ -108,3 +108,13 @@ const Profile = () => {
 };
 
 export default Profile;
+
+// when do user listen to music most (sesons)
+// when do user listen to music most (Times of the day)
+
+
+// how many listen Time (Nour 1)
+// percentage of the artist (Nour 2)
+
+
+//homepage

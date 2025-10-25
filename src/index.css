@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+.MuiChartsLegend-label {
+  color: white;
+  font-size: 15px;
+}

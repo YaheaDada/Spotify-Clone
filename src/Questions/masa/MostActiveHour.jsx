@@ -59,9 +59,9 @@ const MostActiveSeason = () => {
   if (error) return <p className="text-red-500 p-4">{error}</p>;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#121212] to-[#181818] text-white p-6 flex flex-col items-center w-full">
+    <div className="  bg-gradient-to-b  text-white p-6 flex flex-col items-center w-full">
       <h1 className="text-3xl font-bold mb-6 text-green-400">
-        🎵 Most Active Listening Season
+         Most Active Listening Season
       </h1>
 
       {mostActiveSeason ? (
@@ -81,7 +81,7 @@ const MostActiveSeason = () => {
       )}
 
       {seasonData.length > 0 && (
-        <div className="bg-[#1e1e1e] rounded-xl p-4 shadow-lg border border-[#333] w-full max-w-2xl">
+        <div className="bg-[#131313] rounded-xl p-4 shadow-lg border border-[#333] w-full max-w-2xl">
           <BarChart
             xAxis={[
               {
@@ -109,7 +109,7 @@ const MostActiveSeason = () => {
               ".MuiBarElement-root:hover": {
                 fill: "#ef476f",
               },
-              backgroundColor: "#1e1e1e",
+              backgroundColor: "#131313",
             }}
           />
         </div>

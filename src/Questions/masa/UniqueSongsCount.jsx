@@ -36,9 +36,9 @@ const UniqueSongsCount = () => {
     : 0;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#121212] to-[#181818] text-white flex flex-col items-center justify-center p-6 w-full">
+    <div className=" bg-gradient-to-b from-[#121212] to-[#181818] text-white flex flex-col items-center justify-center p-6 w-full">
       <h1 className="text-3xl font-bold mb-6 text-green-400">
-        🎵 Unique Songs Played
+        Unique Songs Played
       </h1>
 
       {uniqueCount !== null ? (

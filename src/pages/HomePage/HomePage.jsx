@@ -5,13 +5,16 @@ import MostActiveSeason from "../../Questions/masa/MostActiveHour";
 
 import React from "react";
 import { BarChart, PieChart, Gauge } from "@mui/x-charts";
+import Hero from "../../components/Hero";
+import HeroSection from "../../components/Hero";
 
 const HomePage = () => {
   const featuredPlaylists = [
     {
       id: 1,
       name: "Top Hits 2025",
-      cover: "https://i.scdn.co/image/ab67706f0000000323b0a9bbebad61dd7e3dc2f4",
+      cover:
+        "https://images.unsplash.com/photo-1761216466205-940be541402b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=774",
     },
     {
       id: 2,
@@ -72,12 +75,10 @@ const HomePage = () => {
 
   return (
     <div className="min-h-screen w-screen bg-gradient-to-b from-[#121212] to-[#181818] text-gray-100 p-9">
-      {/* Header */}
+      <HeroSection />
       <div className="max-w-[1800px] mx-auto mb-12 flex flex-col md:flex-row justify-between items-center bg-[#1e1e1e] p-9 rounded-3xl shadow-lg border border-[#333]">
         <div>
-          <h1 className="text-5xl font-bold text-white mb-2">
-            Welcome Back 👋
-          </h1>
+          <h1 className="text-5xl font-bold text-white mb-2">Welcome Back</h1>
           <p className="text-xl text-gray-400">Your daily music dashboard</p>
         </div>
         <div className="mt-6 md:mt-0">
@@ -175,11 +176,21 @@ const HomePage = () => {
           <Gauge width={385} height={300} value={145} min={0} max={300} />
           <p className="mt-3 text-gray-300 text-xl">~2h 25m</p>
         </div>
+        {/* !DATA */}
+        <div className="bg-[#1e1e1e] p-9 rounded-xl shadow border border-[#333] ">
+          <TopArtistsByPeriod />
+        </div>
+        <div className="bg-[#1e1e1e] p-9 rounded-xl shadow border border-[#333] md:col-span-2 min-h-[750px]">
+          <AverageListeningTime />
+        </div>
+
+        <div className="bg-[#1e1e1e] p-9 rounded-xl shadow border border-[#333] h-[750px] md:col-span-2">
+          <MostActiveSeason />
+        </div>
+        <div className="bg-[#1e1e1e] p-9 rounded-xl shadow border border-[#333]">
+          <UniqueSongsCount />
+        </div>
       </div>
-      <TopArtistsByPeriod />
-      <AverageListeningTime />
-      <MostActiveSeason />
-      <UniqueSongsCount />
     </div>
   );
 };

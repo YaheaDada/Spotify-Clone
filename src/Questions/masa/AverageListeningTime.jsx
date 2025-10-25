@@ -42,16 +42,16 @@ const AverageListeningTime = () => {
       })
       .catch((err) => {
         console.error("Error loading data:", err);
-        setError("حدث خطأ أثناء تحميل البيانات.");
+        setError("errpr ");
       });
   }, []);
 
   if (error) return <p className="text-red-500 p-4">{error}</p>;
 
   return (
-    <div className="p-6 text-center text-white bg-gradient-to-b from-[#121212] to-[#181818] min-h-screen w-full items-center flex justify-center flex-col">
+    <div className="p-6 text-center text-white w-full justify-center flex-col flex items-center w-full h-full">
       <h1 className="text-3xl font-bold mb-4 text-green-400">
-        📈 Average Daily Listening Time
+        Average Daily Listening Time
       </h1>
 
       {avgTime ? (
@@ -67,15 +67,21 @@ const AverageListeningTime = () => {
       )}
 
       {dailyData.length > 0 && (
-        <div className="bg-[#1e1e1e] rounded-xl p-4 shadow-lg border border-[#333] w-[1000px]  text-white">
+        <div className="bg-[#131313] rounded-xl p-4 shadow-lg border border-[#333] w-full   text-white">
           <LineChart
             xAxis={[
               {
                 data: dailyData.map((d) => d.date),
-                label: "Date",
                 scaleType: "band",
-                tickLabelStyle: { fill: "#aaa", fontSize: 12 },
-                labelStyle: { color: "#ffff" },
+                tickLabelStyle: { fill: "#fff", fontSize: 12 },
+                labelStyle: { fill: "#fff" },
+              },
+            ]}
+            yAxis={[
+              {
+                label: "Hours Listened",
+                labelStyle: { fill: "#ffff", fontSize: 14, fontWeight: 600 },
+                tickLabelStyle: { fill: "#ffff" },
               },
             ]}
             series={[
@@ -87,21 +93,14 @@ const AverageListeningTime = () => {
                 showMark: false,
               },
             ]}
-            height={400}
+            height={550}
             margin={{ top: 30, right: 30, bottom: 50, left: 60 }}
             sx={{
-              ".MuiLineElement-root": {
-                strokeWidth: 2,
-              },
-              ".MuiAreaElement-root": {
-                fillOpacity: 0.15,
-              },
-              ".MuiChartsAxis-tickLabel": {
-                fill: "#aaa",
-              },
-              ".MuiChartsAxis-label": {
-                fill: "#ccc",
-              },
+              ".MuiLineElement-root": { strokeWidth: 2 },
+              ".MuiAreaElement-root": { fillOpacity: 0.15 },
+              ".MuiChartsAxis-tickLabel": { fill: "#fff" },
+              ".MuiChartsAxis-label": { fill: "#fff" },
+              ".MuiChartsLegend-label": { fill: "#fff" },
             }}
           />
         </div>
