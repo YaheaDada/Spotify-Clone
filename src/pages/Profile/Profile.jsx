@@ -1,107 +1,95 @@
 import React from "react";
-import {
-  BarChart,
-  Gauge,
-  LineChart,
-  PieChart,
-  ScatterChart,
-} from "@mui/x-charts";
+import { BarChart, Gauge, PieChart } from "@mui/x-charts";
 
 const Profile = () => {
-  const data = Array.from({ length: 50 }, (_, i) => ({
-    id: i + 1,
-    x1: Math.floor(Math.random() * 100), // random x1 between 0-99
-    y1: Math.floor(Math.random() * 100), // random y1 between 0-99
-    x2: Math.floor(Math.random() * 100), // random x2 between 0-99
-    y2: Math.floor(Math.random() * 100), // random y2 between 0-99
-  }));
-
-  const dataset = [
-    { month: "Jan", seoul: 52 },
-    { month: "Feb", seoul: 38 },
-    { month: "Mar", seoul: 45 },
-    { month: "Apr", seoul: 60 },
-    { month: "May", seoul: 75 },
-  ];
-  const valueFormatter = (value) => `${value} mm`;
-
-  const chartSetting = {
-    height: 300,
-    width: 500,
-    // ...other settings
+  const user = {
+    firstName: "Yaya",
+    lastName: "Dada",
+    email: "yaya@example.com",
+    phone: "+31 123 456 789",
+    avatar: "https://i.pravatar.cc/150?img=12",
   };
 
+  // Dummy data for charts
+  const monthlyPlays = [
+    { month: "Jan", plays: 120 },
+    { month: "Feb", plays: 90 },
+    { month: "Mar", plays: 150 },
+    { month: "Apr", plays: 200 },
+    { month: "May", plays: 180 },
+  ];
+
+  const uniqueSongs = [
+    { id: 0, value: 40, label: "Pop" },
+    { id: 1, value: 25, label: "Rock" },
+    { id: 2, value: 35, label: "Hip-Hop" },
+  ];
 
   return (
-    <div className="flex flex-col justify-center items-center  w-screen">
-      <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
+    <div className="min-h-screen bg-gray-900 text-gray-100 p-6 w-screen">
+      {/* Profile Header */}
+      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center bg-gray-800 p-6 rounded-2xl shadow-lg mb-8">
+        <img
+          src={user.avatar}
+          alt="Profile"
+          className="w-32 h-32 rounded-full border-4 border-amber-400 mb-4 md:mb-0 md:mr-6"
+        />
+        <div className="text-center md:text-left">
+          <h1 className="text-3xl font-bold mb-2">
+            {user.firstName} {user.lastName}
+          </h1>
+          <p className="text-gray-400 mb-1">{user.email}</p>
+          <p className="text-gray-400">{user.phone}</p>
+        </div>
+      </div>
 
-      <BarChart
-        dataset={dataset}
-        yAxis={[{ scaleType: "band", dataKey: "month" }]}
-        series={[{ dataKey: "seoul", label: "Seoul rainfall", valueFormatter }]}
-        layout="horizontal"
-        {...chartSetting}
-      />
+      {/* Charts Section */}
+      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Average Listening Time Gauge */}
+        <div className="bg-gray-800 p-6 rounded-xl shadow text-center items-center  ">
+          <h3 className="font-semibold mb-2 text-amber-400">
+            Avg Listening Time
+          </h3>
+          <Gauge
+            width={200}
+            height={200}
+            value={135} // minutes
+            min={0}
+            max={300}
+          />
+          <p className="mt-2 text-gray-300">~2h 15m</p>
+        </div>
 
-      <BarChart
-        xAxis={[
-          {
-            id: "barCategories",
-            data: ["bar A", "bar B", "bar C"],
-          },
-        ]}
-        series={[
-          {
-            data: [9, 7, 8],
-          },
-        ]}
-        height={300}
-      />
-      <LineChart
-        xAxis={[{ data: [1, 2, 3, 5, 8, 10] }]}
-        series={[
-          {
-            data: [2, 5.5, 2, 8.5, 1.5, 5],
-          },
-        ]}
-        height={300}
-      />
-      <PieChart
-        series={[
-          {
-            data: [
-              { id: 0, value: 10, label: "series A" },
-              { id: 1, value: 15, label: "series B" },
-              { id: 2, value: 20, label: "series C" },
-            ],
-          },
-        ]}
-        width={200}
-        height={200}
-      />
-      <ScatterChart
-        height={300}
-        series={[
-          {
-            label: "Series A",
-            data: data.map((v) => ({ x: v.x1, y: v.y1, id: v.id })),
-          },
-          {
-            label: "Series B",
-            data: data.map((v) => ({ x: v.x2, y: v.y2, id: v.id })),
-          },
-        ]}
-        grid={{ vertical: true, horizontal: true }}
-      />
-      <Gauge
-        width={100}
-        height={100}
-        value={60}
-        startAngle={-90}
-        endAngle={90}
-      />
-      {/* ! */}
+        {/* Monthly Plays Bar Chart */}
+        <div className="bg-gray-800 p-6 rounded-xl shadow">
+          <h3 className="font-semibold mb-2 text-amber-400 text-center">
+            Monthly Plays
+          </h3>
+          <BarChart
+            dataset={monthlyPlays}
+            yAxis={[{ dataKey: "month", scaleType: "band" }]}
+            series={[{ dataKey: "plays", label: "Plays" }]}
+            layout="horizontal"
+            height={250}
+          />
+        </div>
+
+        {/* Unique Songs Pie Chart */}
+        <div className="bg-gray-800 p-6 rounded-xl shadow">
+          <h3 className="font-semibold mb-2 text-amber-400 text-center">
+            Unique Songs by Genre
+          </h3>
+          <PieChart series={[{ data: uniqueSongs }]} width={250} height={250} />
+        </div>
+
+        {/* Optional: Placeholder for future chart */}
+        <div className="bg-gray-800 p-6 rounded-xl shadow text-center text-gray-400">
+          <h3 className="font-semibold mb-2 text-amber-400">
+            Most Active Period
+          </h3>
+          <p>Evenings (6pm-10pm)</p>
+        </div>
+      </div>
     </div>
   );
 };
